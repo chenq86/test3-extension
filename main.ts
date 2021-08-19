@@ -430,8 +430,8 @@ namespace ICbit {
     export function Servo4(num: enServo, value: number): void {
 
         // 50hz: 20,000 us
-        let us = (value * 1800 / 180 + 600); // 0.6 ~ 2.4
-        let pwm = us * 4096 / 40000;
+        let us = (value * 1800 * 0.6 / 180 + 600); // 0.6 ~ 2.4
+        let pwm = us * 4096 / 20000;
         setPwm(num, 0, pwm);
 
     }
