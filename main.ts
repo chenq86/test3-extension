@@ -424,7 +424,7 @@ namespace ICbit {
     }
 
     //% blockId=SuperBit_Servo4 block="Geek舵机| %num|角度 %value"
-    //% num.min=1 num.max=4 value.min=0 value.max=360
+    //% num.min=1 num.max=4 value.min=0 value.max=300
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=20
     //% subcategory=执行器
     export function Servo4(num: enServo, value: number): void {
@@ -434,17 +434,6 @@ namespace ICbit {
         let pwm = us * 4096 / 20000;
         setPwm(num, 0, pwm);
 
-    }
-
-    //% blockId=SuperBit_Servo block="Geek舵机1| %num|角度 %value"
-    //% num.min=1 num.max=4 value.min=0 value.max=360
-    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=20
-    //% subcategory=执行器
-    export function Servo(pin: AnalogPin, value: number) {
-        
-            pins.analogSetPeriod(pin, 1023)
-            pins.analogWritePin(pin, Math.map(value/2, 0, 1023, 0, 360))
-        
     }
 
     //% blockId=SuperBit_MotorRun block="电机|%index|速度(-255~255) %speed"
